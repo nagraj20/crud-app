@@ -1,0 +1,24 @@
+<<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Crud operations</title>
+    <link rel="stylesheet" href="{% static 'crud_app/styling.css' %}">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+  <body>
+    <h1> HELLO THIS PAGE IS TO PERFORM CRUD OPERATIONS</h1>
+    <OL>
+        <h3>
+             <a href="{%url 'insert_data'%}">1: Insert data into user table</a><br>
+             <p></p>
+             <p></p>
+             <a href="{% url 'display_data'%}">2: Display</a><br>
+             <p></p>
+             <a href="/display">3:delete</a> 
+        </h3>
+    </OL>
+  </body>
+</html>

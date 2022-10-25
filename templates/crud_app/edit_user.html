@@ -1,0 +1,68 @@
+<
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>users table</title>
+    <link rel="stylesheet" href="{% static 'crud_app/styling.css' %}">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body>
+    <center>
+        <h1>Users table display</h1>
+        <form method="POST" action="/update/{{users.id}}">
+            {% csrf_token %}
+            <div>
+                <br>
+                <p>
+                    <h3>Update Details</h3>
+                </p>
+            </div>
+            <div>
+                <p>User Id:</p>
+                <div>
+                    <input type="text" name="id" value="{{users.id}}" readonly />
+                </div>
+            </div>
+            <div>
+                <p>First Name:</p>
+                <div>
+                    <input type="text" name="first_name" value="{{users.first_name}}" readonly />
+                </div>
+            </div>
+            <div>
+                <p>last Name:</p>
+                <div>
+                    <input type="text" name="last_name" value="{{users.last_name}}" readonly />
+                </div>
+            </div>
+            <div>
+                <p>email:</p>
+                <div>
+                    <input type="email" name="email" value="{{users.email}}" />
+                </div>
+            </div>
+            <div>
+                <div>
+                    <p>Salary:</p>
+                    <div>
+                        <input type="number" name="amount" value="{{users.amount}}" />
+                    </div>
+                </div>
+                <div>
+                    <button type="submit">update</button>
+
+                </div>
+            </div>
+        </form>
+                    {% if messages %}
+                    {% for i in messages %}
+                    <b>{{i}}</b>
+                    {% endfor %}
+                    {% endif %}
+</center>
+
+</body>
+</html>

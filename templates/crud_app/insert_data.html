@@ -1,0 +1,36 @@
+<
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Crud operations</title>
+    <link rel="stylesheet" href="{% static 'crud_app/styling.css' %}">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body>
+    <h1> HELLO THIS PAGE IS TO INSERT DATA INTO  USERS TABLE</h1>
+    <form method="POST">
+        <div class="form-group">
+            {% csrf_token %}
+            First Name : <input class="form-control form-control-lg" type="text" name="first_name" placeholder="first name" required /><br />
+            <p></p>
+            Last Name  : <input class="form-control form-control-lg" type="text" name="last_name" placeholder="last name" />           <br />
+            <p></p>
+
+            Email      : <input class="form-control form-control-lg" type="email" name="email" placeholder="email" required />         <br />
+            <p></p>
+            Salary     : <input class="form-control form-control-lg" type="number" name="amount" placeholder="salary" />                <br />
+            <p></p>
+            <input type="submit" />
+            {% if messages %}
+            {% for mess in messages %}
+            <b>{{mess}}</b>
+            {% endfor %}
+            {% endif %}
+        </div>
+    </form>
+ 
+</body>
+</html>
